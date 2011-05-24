@@ -13,10 +13,10 @@ include("php/simplepie.inc.php");
 $feed = new SimplePie();
 
 // Set Feeds
-$rssBasecamp  = "https://a611ec0e956a75efd52941888915460757344399:x@iaspect.basecamphq.com/feed/recent_items_rss";
-$atomHighrise = "https://e25a45e4d2e71fee5c6688f8208cafb4e1775e1c:x@iaspect.highrisehq.com/recordings.atom";
-$atomGmail    = "https://iaspect.support:internetbureauiaspect@mail.google.com/mail/feed/atom/@actions/";
-//https://mail.google.com/mail/feed/atom
+$rssBasecamp  = "https://KEY:x@SUBDOMAIN.basecamphq.com/feed/recent_items_rss";
+$atomHighrise = "https://KEY@SUBDOMAIN.highrisehq.com/recordings.atom";
+$atomGmail    = "https://USERNAME:PASSWORD@mail.google.com/mail/feed/atom/";
+
 $isHighrise = $isBasecamp = $isGmail = false;
 
 // Check if feed is set to Highrise
@@ -166,7 +166,7 @@ function shorten($string, $length)
    			<h2><a href="<?php
    			// gmail uses different authentication URL
    			if($isGmail) { 
-   			   echo "https://www.google.com/accounts/ServiceLoginAuth?continue=http://mail.google.com/gmail&amp;service=mail&amp;Email=iaspect.support&amp;Passwd=internetbureauiaspect&amp;null=Sign+in";
+   			   echo "https://www.google.com/accounts/ServiceLoginAuth?continue=http://mail.google.com/gmail&amp;service=mail&amp;Email=EMAILADDRESS&amp;Passwd=PASSWORD&amp;null=Sign+in";
    			} else { 
    			 echo $item->get_permalink(); 
    			} ?>"><?php echo $item->get_title(); ?></a></h2>
